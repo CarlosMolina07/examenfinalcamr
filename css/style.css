@@ -1,0 +1,821 @@
+:root {
+  --azul: #8fd4f8;
+  --rosa: #ff8ece;
+  --verde: #6afaa8;
+  --amarillo: #ffe883;
+  --plateado: #fafafa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oxygen", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--plateado);
+}
+
+.img_belleza,
+.servicios,
+.form {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/** Cabecera **/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.7s;
+  padding: 30px 20px 30px 40px;
+  z-index: 10;
+}
+
+header.abajo {
+  background: var(--plateado);
+  padding: 15px 20px 15px 40px;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: 1.5s;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .logo img {
+  width: 79px;
+  height: 44px;
+}
+
+header .logo h2 {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+header ul li a {
+  position: relative;
+  font-family: helvetica;
+  margin: 0;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 0.7s;
+}
+
+header ul li::before {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background: var(--azul);
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  transition: 0.3s ease-out;
+}
+
+header ul li:hover::before {
+  width: 100%;
+}
+
+.queohs {
+  position: absolute;
+  display: none;
+  width: 200px;
+  background-color: var(--palteado);
+  top: 40px;
+  left: -10px;
+}
+
+.queohs::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid var(--plateado);
+  position: absolute;
+  top: -12px;
+  left: 20px;
+}
+
+.navegacion li .queohs {
+  background-color: var(--plateado);
+  padding-bottom: 25px;
+}
+
+.navegacion li:hover .queohs {
+  display: block;
+}
+
+.queohs .queohs_li .queohs_a {
+  display: block;
+  color: #000;
+  padding-bottom: 10px;
+  bottom: -10px;
+}
+
+.queohs .queohs_li .queohs_a_creator {
+  display: block;
+  color: #000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  bottom: -10px;
+}
+
+.img_belleza {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(https://cdn.pixabay.com/photo/2020/05/24/02/00/barber-shop-5212059_960_720.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.img_belleza--uno {
+  /**padding: 200px;**/
+  margin: auto;
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
+}
+
+.curveada {
+  position: absolute;
+  width: 100%;
+  bottom: -70px;
+}
+
+.curveada img {
+  width: 100%;
+}
+
+header.abajo .logo,
+header.abajo ul li a {
+  color: #000;
+}
+
+/** agenda de servicios **/
+
+.agenda {
+  margin-top: 70px;
+}
+
+.agenda h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.agenda_flex {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 40px 200px 0px;
+  padding: 10px;
+}
+
+.agenda_flex--calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #404040;
+  border-radius: 10px;
+}
+
+.calendar {
+  margin: 10px;
+}
+
+.agenda_flex--calendar h3 {
+  background-color: #686868;
+  color: #fff;
+  padding: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.agenda_flex--whatsapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00c856;
+  border-radius: 10px;
+}
+
+.whatsapp {
+  margin: 10px;
+}
+
+.agenda_flex--whatsapp h3 {
+  background-color: #00e676;
+  padding: 20px;
+  color: #fff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/** servicios ofrecidos **/
+
+.servicios {
+  margin-bottom: 0px;
+}
+
+.servicios .titulo {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 80px;
+}
+
+.servicios h2 {
+  font-size: 40px;
+}
+
+.servicios_descripcion {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.servicios_contenedor {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.servicios_contenedor_padre {
+  margin: 20px;
+  perspective: 1000px;
+}
+
+.servicios_contenedor_padre:hover .servicios_contenedor_padre_img {
+  transform: rotateY(180deg);
+}
+
+.servicios_contenedor_padre_img {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 600ms;
+}
+
+.servicios_contenedor_padre_img_front {
+  background-size: cover;
+  background-position: center;
+}
+
+/** maquillaje **/
+
+.servicios_contenedor_padre_img_front,
+.servicios_contenedor_padre_img_back--maquillaje {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+.servicios_contenedor_padre_img_back--maquillaje {
+  transform: rotateY(180deg);
+  background: var(--rosa);
+}
+
+/** Manicure y Pedicure **/
+
+.servicios_contenedor_padre_img_front,
+.servicios_contenedor_padre_img_back--manicure {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+.servicios_contenedor_padre_img_back--manicure {
+  transform: rotateY(180deg);
+  background: var(--verde);
+}
+
+/** Barberia **/
+
+.servicios_contenedor_padre_img_front,
+.servicios_contenedor_padre_img_back--barberia {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+.servicios_contenedor_padre_img_back--barberia {
+  transform: rotateY(180deg);
+  background: var(--amarillo);
+}
+
+/** cuerpo de las img **/
+
+.servicios_contenedor_padre_img_front--body {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transform: translateZ(60px);
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+}
+
+.servicios_contenedor_padre_img_back--body {
+  padding: 40px;
+  text-align: center;
+  transform: translateZ(60px);
+}
+
+.servicios_contenedor_padre_img_back--body p {
+  margin-top: 60px;
+  font-size: 18px;
+}
+
+/** button: ver todos los servicios **/
+
+/** boton uno **/
+
+.btn_content_uno {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  text-decoration: none;
+}
+
+.btn {
+  color: black;
+  background-color: var(--azul);
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn_style {
+  position: relative;
+  z-index: 2;
+  transition: 0.3s ease all;
+}
+
+.btn.uno::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: calc(-100% - 47px);
+  border-bottom: 47px solid #2aa5e7;
+  border-right: 47px solid transparent;
+  transition: 0.4s ease-in-out all;
+}
+
+.btn.uno:hover::after {
+  left: 0;
+}
+
+/** botn dos **/
+
+.btn_content_dos {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn {
+  color: #000;
+  background-color: var(--azul);
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn_style {
+  position: relative;
+  z-index: 2;
+  transition: 0.3s ease all;
+}
+
+.btn.dos::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: calc(-100% - 47px);
+  border-bottom: 47px solid #2aa5e7;
+  border-right: 47px solid transparent;
+  transition: 0.4s ease-in-out all;
+}
+
+.btn.dos:hover::after {
+  left: 0;
+}
+
+/** Boton tres **/
+
+.btn_content_tres {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn_form {
+  color: #000;
+  background-color: var(--verde);
+  width: auto;
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .w-sm-100 {
+    width: auto;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.btn_content_tres {
+  justify-content: flex-end;
+}
+
+.btn_style_form {
+  position: relative;
+  z-index: 2;
+  transition: 0.3s ease all;
+}
+
+.btn_form.tres::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: calc(-100% - 47px);
+  border-bottom: 47px solid #53cc87;
+  border-right: 47px solid transparent;
+  transition: 0.4s ease-in-out all;
+}
+
+.btn_form.tres:hover::after {
+  left: 0;
+}
+
+/** Que es OHS - Ocaña Home-Stylist **/
+
+#ohs {
+  padding: 90px 0;
+  margin-top: 80px;
+  width: 100%;
+  height: 600px;
+}
+
+#ohs h2 {
+  padding-bottom: 50px;
+  padding-left: 100px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#ohs h4 {
+  font-size: 20px;
+}
+
+.ohs-row {
+  display: flex;
+}
+
+.ohs-row-image img {
+  height: 300px;
+  padding-right: 90px;
+  padding-left: 100px;
+}
+
+.ohs-row-text hr {
+  width: 33%;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 10px;
+  border-top: 2px solid #000;
+}
+
+#ohs p {
+  margin-top: 10px;
+  margin-right: 100px;
+  text-align: justify;
+}
+
+/** Cards **/
+
+#container_card {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+#container_card h2 {
+  font-size: 40px;
+}
+
+#card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: var(--plateado);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+}
+
+#card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transform: translateY(-15px);
+}
+
+#card .head {
+  height: 125px;
+  width: 100%;
+  position: relative;
+}
+
+#card .head .circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--azul);
+  bottom: 0;
+}
+
+#card .head .img {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  background-color: var(--plateado);
+  padding: 5px;
+  border-radius: 50%;
+  bottom: -10%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#card .head .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#card .description {
+  height: 200px;
+  padding: 50px 20px 20px 20px;
+  text-align: center;
+}
+
+#card .description h4 {
+  padding-top: 10px;
+}
+
+/** formulario **/
+
+.form h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+.formulario {
+  background-color: var(--azul);
+  width: min(600px, 100%);
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+.formulario fieldset {
+  border: none;
+}
+
+.formulario legend {
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.formulario-contenedor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto 150px;
+  column-gap: 10px;
+}
+
+.input:nth-child(3),
+.input:nth-child(4) {
+  grid-column: 1 / 3;
+}
+.input {
+  margin-bottom: 10px;
+}
+
+.input label {
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input textarea {
+  height: 100px;
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/** Chevron-up ___ Boton subir arriba **/
+
+.chevron_up {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: var(--azul);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  display: none;
+  transform: translateY(100px);
+  transition: 0.3s;
+}
+
+.chevron-up-on {
+  transform: translateY(0);
+}
+
+/** footer **/
+
+footer {
+  width: 100%;
+  padding: 50px 0px;
+  background-image: url(../img/wave_\(3\).svg);
+  background-size: cover;
+}
+
+.container_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 250px;
+}
+
+.box__footer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.box__footer--redes {
+  display: flex;
+}
+
+.box__footer .description {
+  width: 350px;
+  margin-top: 20px;
+  font-weight: 500;
+  color: #5e5e5e;
+}
+
+.box__footer h2 {
+  margin-bottom: 30px;
+  color: #343434;
+  font-weight: 700;
+}
+
+.box__footer a {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+
+.box__footer a:hover {
+  opacity: 0.8;
+}
+
+.box__copyright {
+  width: 1085px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.box__copyright p {
+  margin-top: 20px;
+  color: #5e5e5e;
+}
+
+.box__copyright hr {
+  border: none;
+  height: 1px;
+  background-color: #5e5e5e;
+}

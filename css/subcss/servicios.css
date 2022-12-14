@@ -1,0 +1,250 @@
+:root {
+  --azul: #8fd4f8;
+  --rosa: #ff8ece;
+  --verde: #6afaa8;
+  --amarillo: #ffe883;
+  --plateado: #fafafa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oxygen", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--plateado);
+}
+
+header .logo {
+  position: relative;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: 1.5s;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li a {
+  position: relative;
+  font-family: helvetica;
+  margin: 0;
+  text-decoration: none;
+  color: #000;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 0.7s;
+}
+
+.titulo {
+  margin-top: 150px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#contenedor input label {
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.radio__input {
+  display: none;
+}
+
+.radio__label {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #000;
+  background-color: var(--azul);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.radio__label:not(:last-of-type) {
+  border-right: 1px solid #2aa5e7;
+}
+
+.radio__input:checked + .radio__label {
+  background-color: #2aa5e7;
+}
+
+#contenedor_tablas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.contenedor_tabla_uno,
+.contenedor_tabla_dos,
+.contenedor_tabla_tres,
+.contenedor_tabla_cuatro,
+.contenedor_tabla_cinco {
+  margin: 20px;
+}
+
+/** tabla uno **/
+
+.contenedor_tabla_uno table {
+  background: linear-gradient(#ff8ece, #f358b0);
+  border: 2px solid #f358b0;
+  border-radius: 5px;
+  padding: 10px 50px;
+}
+
+.contenedor_tabla_uno table thead tr th {
+  padding: 15px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.contenedor_tabla_uno table tbody tr td {
+  padding: 20px;
+  border: 2px solid #ffffff;
+  border-bottom: 2px solid #000;
+  text-align: center;
+  display: block;
+  margin: 10px;
+}
+
+/** tabla dos **/
+
+.contenedor_tabla_dos table {
+  background: linear-gradient(#6afaa8, #30e780);
+  border: 2px solid #30e780;
+  border-radius: 5px;
+  padding: 10px 50px;
+}
+
+.contenedor_tabla_dos table thead tr th {
+  padding: 15px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.contenedor_tabla_dos table tbody tr td {
+  padding: 20px;
+  border: 2px solid #ffffff;
+  border-bottom: 2px solid #000;
+  text-align: center;
+  display: block;
+  margin: 10px;
+}
+
+/** tabla tres **/
+
+.contenedor_tabla_tres table {
+  background: linear-gradient(#ffe883, #f0d042);
+  border: 2px solid #f0d042;
+  border-radius: 5px;
+  padding: 10px 50px;
+}
+
+.contenedor_tabla_tres table thead tr th {
+  padding: 15px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.contenedor_tabla_tres table tbody tr td {
+  padding: 20px;
+  border: 2px solid #ffffff;
+  border-bottom: 2px solid #000;
+  text-align: center;
+  display: block;
+  margin: 10px;
+}
+
+/** tabla cuatro **/
+
+.contenedor_tabla_cuatro table {
+  background: linear-gradient(#8fd4f8, #2aa5e7);
+  border: 2px solid #2aa5e7;
+  border-radius: 5px;
+  padding: 10px 50px;
+}
+
+.contenedor_tabla_cuatro table thead tr th {
+  padding: 15px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.contenedor_tabla_cuatro table tbody tr td {
+  padding: 20px;
+  border: 2px solid #ffffff;
+  border-bottom: 2px solid #000;
+  text-align: center;
+  display: block;
+  margin: 10px;
+}
+
+/** tabla cinco **/
+
+.contenedor_tabla_cinco table {
+  background: linear-gradient(#fafafa, #fff);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px 50px;
+}
+
+.contenedor_tabla_cinco table thead tr th {
+  padding: 15px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.contenedor_tabla_cinco table tbody tr td {
+  padding: 20px;
+  border: 2px solid #ffffff;
+  border-bottom: 2px solid #000;
+  text-align: center;
+  display: block;
+  margin: 10px;
+}
+
+/** Filtrado de tablas **/
+
+#maquillaje:checked ~ #contenedor_tablas .contenedor_tabla_dos,
+#maquillaje:checked ~ #contenedor_tablas .contenedor_tabla_tres,
+#maquillaje:checked ~ #contenedor_tablas .contenedor_tabla_cuatro,
+#maquillaje:checked ~ #contenedor_tablas .contenedor_tabla_cinco {
+  display: none;
+}
+
+#manicure:checked ~ #contenedor_tablas .contenedor_tabla_uno,
+#manicure:checked ~ #contenedor_tablas .contenedor_tabla_tres,
+#manicure:checked ~ #contenedor_tablas .contenedor_tabla_cuatro,
+#manicure:checked ~ #contenedor_tablas .contenedor_tabla_cinco {
+  display: none;
+}
+
+#pedicure:checked ~ #contenedor_tablas .contenedor_tabla_uno,
+#pedicure:checked ~ #contenedor_tablas .contenedor_tabla_dos,
+#pedicure:checked ~ #contenedor_tablas .contenedor_tabla_cuatro,
+#pedicure:checked ~ #contenedor_tablas .contenedor_tabla_cinco {
+  display: none;
+}
+
+#peinado:checked ~ #contenedor_tablas .contenedor_tabla_uno,
+#peinado:checked ~ #contenedor_tablas .contenedor_tabla_dos,
+#peinado:checked ~ #contenedor_tablas .contenedor_tabla_tres,
+#peinado:checked ~ #contenedor_tablas .contenedor_tabla_cinco {
+  display: none;
+}
+
+#barberia:checked ~ #contenedor_tablas .contenedor_tabla_uno,
+#barberia:checked ~ #contenedor_tablas .contenedor_tabla_dos,
+#barberia:checked ~ #contenedor_tablas .contenedor_tabla_tres,
+#barberia:checked ~ #contenedor_tablas .contenedor_tabla_cuatro {
+  display: none;
+}
